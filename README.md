@@ -10,3 +10,9 @@
 ```
  $ py -m pip install -U pygame --user
  ```
+ 
+## Installing required python dependencies
+- Clone this repository onto your system
+```bash
+git clone https://github.com/thesarthakjain/sudoku-gui
+```

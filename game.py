@@ -1,14 +1,6 @@
 import pygame
+import random
 
-given_board1 = [[7,2,3,0,0,0,1,5,9],
-               [6,0,0,3,0,2,0,0,8],
-               [8,0,0,0,1,0,0,0,2],
-               [0,7,0,6,5,4,0,2,0],
-               [0,0,4,2,0,7,3,0,0],
-               [0,5,0,9,3,1,0,4,0],
-               [5,0,0,0,7,0,0,0,3],
-               [4,0,0,1,0,3,0,0,6],
-               [9,3,2,0,0,0,7,1,4]]
 current_board = [[0,0,0,0,0,0,0,0,0],
                  [0,0,0,0,0,0,0,0,0],
                  [0,0,0,0,0,0,0,0,0],
@@ -56,6 +48,30 @@ def screen_1():
                     board_input()
 
                 elif event.key == pygame.K_2:
+                    given_board1 = [[0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0]]
+
+                    f = open("boards.txt", "r")
+                    inp = f.read()
+                    num_of_boards = len(inp)/81
+                    rand_num = random.randint(0, num_of_boards - 1)
+                    value = ''
+                    for i in range(rand_num*81,(rand_num + 1)*81):
+                        value = value + inp[i]
+
+                    k = 0
+                    for i in range(9):
+                        for j in range(9):
+                            given_board1[i][j] = int(value[k])
+                            k+=1
+                    print(given_board1)
                     screen_2(given_board1)
 
         pygame.display.update()
@@ -148,8 +164,6 @@ def screen_3(given_board):
                     else:
                         test_board[i][j] = given_board[i][j]
 
-            print(test_board)
-            print(solved_board)
 
             trigger = 0
             for i in range(9):
@@ -426,6 +440,14 @@ def board_input():
                     given_board[k][l] = 0
 
                 elif event.key == pygame.K_RETURN:
+                    value = ''
+                    for i in range(9):
+                        for j in range(9):
+                            value = value + str(given_board[i][j])
+                    print(value)
+                    f = open("boards.txt", "a")
+                    f.write(str(value))
+                    f.close()
                     screen_2(given_board)
 
 
@@ -453,6 +475,8 @@ def board_input():
                 l = 8
 
         pygame.display.update()
+
+
 
 
 

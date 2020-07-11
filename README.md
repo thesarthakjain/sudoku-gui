@@ -16,3 +16,8 @@
 ```bash
 git clone https://github.com/thesarthakjain/sudoku-gui
 ```
+
+## Directions to run
+- Run the following command in the project directory:
+```
+python game.py

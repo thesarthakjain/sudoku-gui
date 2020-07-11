@@ -13,12 +13,15 @@
  ```
 
 
-## Directions to run
+## Installing required python dependencies
 
 - Clone this repository onto your system
 ```bash
 git clone https://github.com/thesarthakjain/sudoku-gui
 ```
+
+
+## Directions to run
 
 - Run the following command in the project directory:
 ```

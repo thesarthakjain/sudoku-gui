@@ -44,8 +44,10 @@ def screen_1():
                 quit()
             if event.type == pygame.KEYDOWN:
 
+
                 if event.key == pygame.K_1:
                     board_input()
+
 
                 elif event.key == pygame.K_2:
                     given_board1 = [[0,0,0,0,0,0,0,0,0],
@@ -60,6 +62,7 @@ def screen_1():
 
                     f = open("boards.txt", "r")
                     inp = f.read()
+                    f.close()
                     num_of_boards = len(inp)/81
                     rand_num = random.randint(0, num_of_boards - 1)
                     value = ''

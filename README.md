@@ -17,7 +17,7 @@
 
 - Clone this repository onto your system
 ```bash
-git clone https://github.com/thesarthakjain/sudoku-gui
+$ git clone https://github.com/thesarthakjain/sudoku-gui
 ```
 
 
@@ -25,5 +25,5 @@ git clone https://github.com/thesarthakjain/sudoku-gui
 
 - Run the following command in the project directory:
 ```
-python game.py
+$ python game.py
 ```
